@@ -1,0 +1,21 @@
+type Simple = {
+  somePropA: SimpleSomePropA,
+};
+
+type SimpleSomePropA = {
+  somePropB: SimpleSomePropASomePropB,
+  SomeOtherPropC: Array<SimpleSomePropASomeOtherPropC>,
+};
+
+type SimpleSomePropASomePropB = {
+  someOtherPropA: number,
+  someOtherPropB: number,
+};
+
+type SimpleSomePropASomeOtherPropC = {
+  somePropD: SimpleSomePropASomeOtherPropCSomePropD,
+};
+
+type SimpleSomePropASomeOtherPropCSomePropD = {
+  somePropE: object,
+};

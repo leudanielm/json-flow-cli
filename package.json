@@ -1,0 +1,19 @@
+{
+  "name": "json-flow-cli",
+  "version": "0.1.0",
+  "description": "Generate flow types from json streams without any schemas",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape ./src/**/*Test.js"
+  },
+  "keywords": [
+    "json",
+    "flowtype",
+    "flow"
+  ],
+  "author": "leudanielm@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
+}

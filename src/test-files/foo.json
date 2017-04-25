@@ -1,0 +1,25 @@
+{
+  "somePropA": {
+    "somePropB": {
+      "someOtherPropA": 1,
+      "someOtherPropB": 2
+    },
+    "someOtherPropC": [
+      {
+        "somePropD": {
+          "somePropE": {}
+        }
+      },
+      {
+        "somePropD": {
+          "somePropF": {}
+        }
+      },
+      {
+        "somePropD": {
+          "somePropG": {}
+        }
+      }
+    ]
+  }
+}
