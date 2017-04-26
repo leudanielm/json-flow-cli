@@ -1,4 +1,9 @@
-module.exports = {getType, isPrimitiveType, stripIllegal, capitalise};
+module.exports = {
+  capitalise,
+  getType,
+  isPrimitiveType,
+  stripIllegal,
+};
 
 function getType(value) {
   return toString.call(value).match(/[A-Z].+[^\]]/)[0].toLowerCase();

@@ -1,6 +1,12 @@
-const {getType, isPrimitiveType, stripIllegal, capitalise} = require('./util');
+const {
+  capitalise,
+  getType,
+  isPrimitiveType,
+  stripIllegal,
+} = require('./util');
 
 module.exports = function toFlowType(name, object, typesArray = {}) {
+
   let typeName = getTypeName();
   getSubTypeArray(typeName).push(`type ${typeName} = {`);
 
@@ -31,6 +37,7 @@ module.exports = function toFlowType(name, object, typesArray = {}) {
         parseArray(targetValue[0], prop);
 
       }
+
     }
 
   } else if (getType(object) === 'array') {
@@ -49,13 +56,19 @@ module.exports = function toFlowType(name, object, typesArray = {}) {
     const filteredProp = capitalise(stripIllegal(propName));
 
     if (isFirstItemPrimitive && Boolean(firstItemInValue)) {
+
       addFlowEntry(`  ${filteredProp}: Array<${getType(firstItemInValue)}>,`);
+
     } else if (!isFirstItemPrimitive && Boolean(firstItemInValue)) {
+
       addTypeName(`${typeName}${filteredProp}`);
       addFlowEntry(`  ${filteredProp}: Array<${typeName}${filteredProp}>,`);
       toFlowType(typeName, firstItemInValue, typesArray);
+
     } else {
+
       addFlowEntry(`  ${filteredProp}?: any,`);
+
     }
   }
 
@@ -79,6 +92,7 @@ module.exports = function toFlowType(name, object, typesArray = {}) {
   function getTypeName() {
     const capitalisedName = capitalise(name);
     const isInitialised = Object.keys(typesArray).length;
+
     if (!isInitialised) {
       typesArray.__name = [capitalisedName];
     }
