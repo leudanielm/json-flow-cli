@@ -20,6 +20,7 @@ if (argv.name) {
   });
 } else {
   help();
+  process.exit();
 }
 
 function help() {
@@ -27,12 +28,12 @@ function help() {
   Generate flow types from JSON without any schemas.
 
   Usage examples:
-    cat some-json-file.json | json-flow [options]
-    curl http://some-web-api/json-response | json-flow [options]
+    cat some-json-file.json | json-flow-cli --name=SomeFlowTypeName
+    curl http://some-web-api/json-response | json-flow-cli --name=SomeFlowTypeName
 
   Options:
 
-  --name={schema}      Used to generate the name of your flow types
+  --name={schema}      Used to generate the name of your flow types (required).
   --help               Displays this help.
 `);
 }

@@ -1,6 +1,6 @@
 {
   "name": "json-flow-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate flow types from json streams without any schemas",
   "bin": "cli.js",
   "main": "index.js",
